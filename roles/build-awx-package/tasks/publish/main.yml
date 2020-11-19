@@ -9,7 +9,7 @@
 
 - name: fetch debian package to host (only if cloudsmith upload is disabled)
   fetch:
-    src: "/root/{{ deb_package_name }}"
+    src: "/root/awx-build-package/playbooks/{{ deb_package_name }}"
     dest: "/tmp/{{ deb_package_name }}"
     flat: yes
   when: (upload_to_cloudsmith is not defined) or (not upload_to_cloudsmith|bool)
