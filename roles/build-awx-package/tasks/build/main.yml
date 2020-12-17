@@ -123,6 +123,14 @@
     group: root
     mode: '0755'
 
+- name: ensure awx ui assets directory exists
+  file:
+    path: "{{ awx_ui_path }}/static/assets"
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
 - name: provide awx settins.py configuration file
   template:
     src: "awx/settings.py.j2"
